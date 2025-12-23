@@ -1,0 +1,30 @@
+{% extends "_base.html" %}
+
+{% block title %}문서 편집기{% endblock %}
+
+{% block content %}
+<div class="editor-layout">
+  <!-- 공지 영역 -->
+  <aside class="editor-left">
+    <h3>📢 공지사항</h3>
+    <ul>
+      <li>12/31일까지 문서 제출 필수</li>
+      <li>1월부터 새 양식 사용</li>
+    </ul>
+  </aside>
+
+  <!-- 메뉴 영역 -->
+  <aside class="editor-menu">
+    <button>1단계</button>
+    <button>2단계</button>
+    <button>3단계</button>
+  </aside>
+
+  <!-- A4 편집기 영역 -->
+  <main class="editor-wrapper" id="editorWrapper">
+    <div class="print-page" contenteditable="true">
+      <p><br></p>
+    </div>
+  </main>
+</div>
+{% endblock %}

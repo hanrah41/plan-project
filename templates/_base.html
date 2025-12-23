@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <title>{% block title %}PLAN 시스템{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/static/favicon.ico" />
+  <link rel="stylesheet" href="/static/css/base.css" />
+  <link rel="stylesheet" href="/static/css/editor.css" />
+</head>
+<body>
+
+  <!-- ✅ 상단 1줄: 로고, 사용자 정보 -->
+  <header class="main-header">
+    <div class="frame">
+      <div class="header-left">
+        <img src="/static/img/logo.png" alt="PLAN 로고" class="logo" />
+      </div>
+      <div class="header-center">
+        {% block top_controls %}
+        <!-- (필요 시 버튼 삽입) -->
+        {% endblock %}
+      </div>
+      <div class="header-right">
+        <span class="user-name">홍길동 님</span>
+        <span class="doc-title">작업 문서명</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ✅ 상단 2줄: 툴바 버튼 -->
+  <nav class="toolbar">
+    <div class="frame">
+      {% block toolbar %}
+        <button>서문서 추가</button>
+        <button>파일불러오기</button>
+        <button>문서저장</button>
+        <button>Excel저장</button>
+        <button>PDF저장</button>
+        <button>그룹합병</button>
+        <button>미리보기</button>
+        <button>인쇄</button>
+        <button>작업출력 편집</button>
+      {% endblock %}
+    </div>
+  </nav>
+
+  <!-- ✅ 본문 삽입 영역 -->
+  {% block content %}{% endblock %}
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
